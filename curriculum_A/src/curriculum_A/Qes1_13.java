@@ -19,8 +19,8 @@ public class Qes1_13 {
 		num_short = 0;
 		num_int = 0;
 		num_long = 0L;
-		num_float = 0F;
-		num_double = 0;
+		num_float = 0.0F;
+		num_double = 0.0;
 		text_char = 'あ';
 		text_str = "あ";
 		is_valid = false;
@@ -82,8 +82,85 @@ public class Qes1_13 {
 		System.out.println("好きな食べ物は" + favorite_food + "です");
 		
 		//問題7　BMIの出力
-		//コンソール出力　BMIは○○です
-		System.out.println("BMIは" + (weight / (height / 100 * height / 100)) + "です");
+		/*-------------------------------------------------------------------------
+		コンソール出力　BMIは〇〇です
+		BMI*10で小数点第一位を一の位に上げて、それをroundメソッドで四捨五入し、ダブル型にキャストして、10で割る　
+		-------------------------------------------------------------------------*/
+		System.out.println("BMIは" + (double)Math.round((weight / (height / 100 * height / 100))*10)/10 + "です");
+		
+		//問題8　6の変数に再代入してコンソール表示
+		//『鈴木一郎 24歳 168.5cm 64.2kg オムライス』を変数に再代入
+		name = "鈴木一郎";
+		age = 24;
+		height = 168.5;
+		weight = 64.2;
+		favorite_food = "オムライス";
+		
+		//コンソール出力　初めまして鈴木一郎です
+		System.out.println("初めまして" + name + "です");
+		//コンソール出力　年齢は24歳です
+		System.out.println("年齢は" + age + "歳です");
+		//コンソール出力　身長は168.5cmです
+		System.out.println("身長は" + height + "cmです");
+		//コンソール出力　体重は64.2kgです
+		System.out.println("体重は" + weight + "kgです");
+		//コンソール出力　好きな食べ物はオムライスです
+		System.out.println("好きな食べ物は" + favorite_food + "です");
+		//コンソール出力　BMIは22.6です
+		System.out.println("BMIは" + (double)Math.round((weight / (height / 100 * height / 100))*10)/10 + "です");
+		
+		//問題9 【年齢・身長・体重】の数値を和算で自己代入し、コンソール出力
+		//変数を和算で自己代入する
+		age += age;
+		height += height;
+		weight += weight;
+		
+		//コンソール出力　初めまして鈴木一郎です
+		System.out.println("初めまして" + name + "です");
+		//コンソール出力　年齢は48歳です
+		System.out.println("年齢は" + age + "歳です");
+		//コンソール出力　身長は337.0cmです
+		System.out.println("身長は" + height + "cmです");
+		//コンソール出力　体重は128.4kgです
+		System.out.println("体重は" + weight + "kgです");
+		//コンソール出力　好きな食べ物はオムライスです
+		System.out.println("好きな食べ物は" + favorite_food + "です");
+		//コンソール出力　BMIは11.31です
+		System.out.println("BMIは" + (double)Math.round((weight / (height / 100 * height / 100))*100)/100 + "です");
+		
+		//問題10　問題8で使用した年齢が25歳以上ならtrueが出力されるようにする。if文は使わない。
+		//ageの変数を24に再代入
+		age = 24;
+		//変数ageが25以上ならばtrue
+		is_valid = (age >= 25);
+		//コンソール表示　false
+		System.out.println(is_valid);
+		
+		//問題11　8で使用した【年齢・身長・体重】を文字列型に型変換し繋げて出力してください
+		//変数を問題8の値にするため、再代入
+		height = 168.5;
+		weight = 64.2;
+		//String型の変数を新たに生成し、String型に変換したものを代入
+		String age_str = String.valueOf(age);
+		String height_str = String.valueOf(height);
+		String weight_str = String.valueOf(weight);
+		
+		//文字列型に型変換して、コンソール出力
+		System.out.println(age_str + height_str + weight_str);
+		
+		//問題12　問題11で変換した【年齢・身長】を整数型に変換して出力してください
+		//String型の変数age_strをint型に変換し、int型の変数age_intに代入する
+		int age_int = Integer.parseInt(age_str);
+		//String型の変数height_strをdouble型に変換し、int型にキャストして、int型の変数height_intに代入する
+		int height_int = (int)Double.parseDouble(height_str);
+		//コンソール出力　24
+		System.out.println(age_int);
+		//コンソール出力　168
+		System.out.println(height_int);
+		
+		//問題13　12で変換した【年齢・身長】で【年齢が25もしくは身長が160以上】であればtrueを出力してください
+		is_valid = (age_int == 25 || height_int >= 160);
+		//コンソール出力　true
+		System.out.println(is_valid);
 	}
-
 }
