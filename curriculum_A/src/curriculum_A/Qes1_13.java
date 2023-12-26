@@ -21,8 +21,10 @@ public class Qes1_13 {
 		num_long = 0L;
 		num_float = 0.0F;
 		num_double = 0.0;
-		text_char = 'あ';
-		text_str = "あ";
+		//--------修正----------
+		text_char = '\u0000';
+		text_str = null;
+		//----------------------
 		is_valid = false;
 		
 		//変数に指定された値を代入
@@ -41,8 +43,8 @@ public class Qes1_13 {
 		System.out.println(num_long + num_int + num_short + num_byte);
         //コンソール出力　20
 		System.out.println(num_byte * 2);
-		//コンソール出力 a ハロー true
-		System.out.println(text_char + ' ' + text_str + ' ' + String.valueOf(is_valid));
+		//コンソール出力 a ハロー true　----------------　修正　
+		System.out.println(String.valueOf(text_char) + ' ' + text_str + ' ' + String.valueOf(is_valid));
 		//コンソール出力 11130　全ての数字を足す
 		System.out.println(num_byte + num_short + num_int + num_long + num_float + num_double);
 		//コンソール出力　10000000000　小数点以外の全ての数字をかける
