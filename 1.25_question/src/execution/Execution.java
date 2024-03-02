@@ -1,4 +1,6 @@
 package execution;
+import java.util.Random;
+import java.util.Scanner;
 
 public class Execution {
 	/*
@@ -23,9 +25,23 @@ public class Execution {
 	 
 	 */
 	public static void main(String args[]) {
-		//オブジェクト生成
-		process.Process p = new process.Process("名前",849,862,375,937,24);
+		//Scannerオブジェクト生成
+		Scanner s = new Scanner(System.in);
+		String name_input = s.next();
+		s.close();
+		
+		//processクラスのオブジェクト生成
+		process.Process p = new process.Process(name_input,rand(),rand(),rand(),rand(),rand());
 		//Processクラスのprintメソッドの呼出し
 		p.print();
+	}
+	
+	//1~999のランダムな整数を返すメソッド
+	public static int rand() {
+		//Randomオブジェクト生成
+		Random r = new Random();
+		//1~999のランダムな整数を生成
+		int rand = r.nextInt(999) + 1;
+		return rand;
 	}
 }
