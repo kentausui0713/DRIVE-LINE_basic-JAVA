@@ -1,4 +1,4 @@
-package self_introduction;
+package self_introduction_part1;
 
 public class Main {
 	  public static void main(String[] args) {
@@ -7,8 +7,9 @@ public class Main {
 		    System.out.println(person1.name);
 		    System.out.println(person1.age);
 		    System.out.println(person1.height);
-		    System.out.println("合計人数は⚪︎人です");
+		    
 		    //printメソッドの確認用
 		    person1.print(person1.bmi());
-		  }
+		    System.out.println("合計" + person1.counter() + "人です");
+	}
 }
