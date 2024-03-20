@@ -22,6 +22,8 @@ public class Person {
 	//インスタンスメソッド「bmi」
 	public double bmi() {
 		double bmi = this.weight / (this.height * this.height);
+		//小数点以下を切り捨て
+		bmi = Math.floor(bmi);
 		return bmi;
 	}
 	

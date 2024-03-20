@@ -10,5 +10,6 @@ public class Main {
 		
 		System.out.println("合計" + Person.count + "人です");
 		Person.printCount();
+		System.out.println("鈴木太郎のBMIは" + person1.bmi());
 	}
 }
